@@ -1,24 +1,37 @@
-<div class="container">
+<div class="container mt-3">
     <div class="row">
-        <div class="col-4">
+        <div class="col text-center">
+            <img id="burger-img" src="../../assets/img/burger.jpg" alt="burger">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-4 text-center">
             <h2> To Eat</h2>
             {{#each burger}}
-                {{#unless devoured}}
-                <h1>{{this.burger_name}}
-                    <button class="devour-btn" data-id={{this.id}}>
-                        Devour!
-                    </button>
-                </h1>
-                {{/unless}}
+            {{#unless devoured}}
+            <p class="devour">
+                {{this.burger_name}}
+                {{!-- <button class="devour-btn" data-id={{this.id}}> --}}
+                <img class="devour-btn" data-id={{this.id}} src="../../assets/img/burger_icon.jpg" alt="burger icon">
+                {{!-- </button> --}}
+            </p>
+            {{/unless}}
             {{/each}}
         </div>
-        <div class="col-4"></div>
-        <div class="col-4">
+        <div class="col-4 text-center">
+            {{!-- <label for="name">Burger Name:</label> --}}
+            <h2>Enter a Burger</h2>
+            <input type="text" id="name" name="name" class="mb-3">
+            <button type="submit" id="new-burger-btn">Que up a burger</button>
+        </div>
+        <div class="col-4 text-center">
             <h2> Eaten</h2>
             {{#each burger}}
-                {{#if devoured}}
-                <h1>{{this.burger_name}}</h1>
-                {{/if}}
+            {{#if devoured}}
+            <p class="delete">{{this.burger_name}}
+                <img class="delete-burger" data-id={{this.id}} src="../../assets/img/hide_icon.png" alt="burger icon">
+            </p>
+            {{/if}}
             {{/each}}
         </div>
     </div>

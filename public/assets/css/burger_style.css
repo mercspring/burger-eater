@@ -1,0 +1,27 @@
+#burger-img{
+    width:300px;
+}
+body{
+    background-color: bisque;
+}
+.devour-btn:hover, .delete-burger:hover{
+    cursor: pointer;
+    background-color: red;
+    
+}
+
+.devour-btn,.delete-burger{
+    width: 1em;
+    border: 1pt solid black;
+    padding: 2pt;
+    border-radius: 10%;
+    background-color: white;
+}
+.devour,.delete{
+    font-size: 25pt;
+}
+
+#new-burger-btn{
+    background-color: seagreen;
+    border-color: black;
+}
